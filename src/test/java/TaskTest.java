@@ -8,18 +8,20 @@ public class TaskTest {
         SimpleTask simpleTask = new SimpleTask(1, "Забрать ребенка из сада");
         boolean expected = true;
         boolean actual = simpleTask.matches("Забрать");
-        Assertions.assertEquals(actual,expected);
+        Assertions.assertEquals(actual, expected);
 
     }
+
     @Test
-    public void ShouldSimpleTaskMatchesFalse(){
+    public void ShouldSimpleTaskMatchesFalse() {
         SimpleTask simpleTask = new SimpleTask(1, "Забрать ребенка из сада");
         boolean expected = false;
         boolean actual = simpleTask.matches("Позвонить");
-        Assertions.assertEquals(actual,expected);
+        Assertions.assertEquals(actual, expected);
     }
+
     @Test
-    public void ShouldEpisTaskMatchesTrue(){
+    public void ShouldEpisTaskMatchesTrue() {
         String[] subtasks = {"Забрать ребенка из сада", "Купить продукты", "Договриться о встрече с друзьями"};
         Epic epic = new Epic(2, subtasks);
 
@@ -29,8 +31,9 @@ public class TaskTest {
         Assertions.assertEquals(expected, actual);
 
     }
+
     @Test
-    public void ShouldEpisTaskMatchesNoneQauery(){
+    public void ShouldEpisTaskMatchesNoneQauery() {
         String[] subtasks = {"Забрать ребенка из сада", "Купить продукты", "Договриться о встрече с друзьями"};
         Epic epic = new Epic(2, subtasks);
 
@@ -42,7 +45,7 @@ public class TaskTest {
     }
 
     @Test
-    public void ShouldEpisTaskMatchesFalse(){
+    public void ShouldEpisTaskMatchesFalse() {
         String[] subtasks = {"Забрать ребенка из сада", "Купить продукты", "Договриться о встрече с друзьями"};
         Epic epic = new Epic(2, subtasks);
 
@@ -52,8 +55,9 @@ public class TaskTest {
         Assertions.assertEquals(expected, actual);
 
     }
+
     @Test
-    public void ShouldEpisTaskMatchesNoneQuaery(){
+    public void ShouldEpisTaskMatchesNoneQuaery() {
         String[] subtasks = {"Забрать ребенка из сада", "Купить продукты", "Договриться о встрече с друзьями"};
         Epic epic = new Epic(2, subtasks);
 
@@ -63,6 +67,7 @@ public class TaskTest {
         Assertions.assertEquals(expected, actual);
 
     }
+
     @Test
     public void ShouldMeetingTaskMatchesTrueContains() {
         Meeting meeting = new Meeting(3, "Сделать ДЗ в Нетологии", "Java", "26.10.2024");

@@ -1,6 +1,6 @@
 package ru.netology.plan;
 
-public class Epic extends Task{
+public class Epic extends Task {
 
     protected String[] subTask = new String[0];
 
@@ -10,9 +10,9 @@ public class Epic extends Task{
     }
 
     @Override
-    public boolean matches(String quaery){
-        for(String subTask : subTask){
-            if (subTask.contains(quaery)){
+    public boolean matches(String quaery) {
+        for (String subTask : subTask) {
+            if (subTask.contains(quaery)) {
                 return true;
             }
         }
