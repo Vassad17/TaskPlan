@@ -2,7 +2,7 @@ package ru.netology.plan;
 
 import java.util.Objects;
 
-public abstract class Task {
+public class Task {
     protected int id;
 
     public Task(int id) {
@@ -29,5 +29,9 @@ public abstract class Task {
         return Objects.hash(id);
     }
 
-    public abstract boolean matches(String query);
+    public boolean matches(String query) {
+
+        return false;
+    }
+
 }

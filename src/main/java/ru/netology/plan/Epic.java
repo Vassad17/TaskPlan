@@ -4,6 +4,10 @@ public class Epic extends Task {
 
     protected String[] subTask = new String[0];
 
+    public String[] getSubTask() {
+        return subTask;
+    }
+
     public Epic(int id, String[] subTask) {
         super(id); // вызов родительского конструктора
         this.subTask = subTask; // заполнение своих полей
