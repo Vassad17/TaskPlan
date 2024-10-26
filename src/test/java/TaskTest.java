@@ -108,4 +108,32 @@ public class TaskTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    @Test
+    public void ShouldAllTaskGet() {
+        Task task = new Task(5);
+
+        SimpleTask simpleTask = new SimpleTask(6, "Забрать ребенка из сада");
+
+        String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
+        Epic epic = new Epic(55, subtasks);
+
+        Meeting meeting = new Meeting(555, "Домашнее задание в Нетологии", "Java", "26.10.2024");
+
+        Assertions.assertEquals("Забрать ребенка из сада", simpleTask.getTitle());
+        Assertions.assertEquals(5, task.getId());
+        Assertions.assertEquals(subtasks, epic.getSubTask());
+        Assertions.assertEquals("Домашнее задание в Нетологии", meeting.getTopic());
+        Assertions.assertEquals("Java", meeting.getProject());
+        Assertions.assertEquals("26.10.2024", meeting.getStart());
+
+    }
+
+    @Test
+    public void testPublicBooleanMatches() {
+        Task task = new Task(2);
+
+        Assertions.assertEquals(false, task.matches("2"));
+
+    }
+
 }
