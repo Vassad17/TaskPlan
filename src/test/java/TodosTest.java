@@ -81,14 +81,14 @@ public class TodosTest {
     }
 
     @Test
-    public void testSearchDontHaveTasks(){
+    public void testSearchDontHaveTasks() {
 
         Todos todos = new Todos();
 
         Task[] expected = {};
         Task[] actual = todos.search("Позвонить");
 
-        Assertions.assertArrayEquals(expected,actual);
+        Assertions.assertArrayEquals(expected, actual);
 
     }
 
@@ -107,7 +107,25 @@ public class TodosTest {
         Task[] expected = {task2};
         Task[] actual = todos.search("Отчет");
 
-        Assertions.assertArrayEquals(expected,actual);
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void testSearchHaveSeveralTasks() {
+        SimpleTask task = new SimpleTask(1, "Позвонить родителям");
+        SimpleTask task2 = new SimpleTask(2, "Отчет по работе");
+        SimpleTask task3 = new SimpleTask(3, "Отчет по физ.подготовке");
+
+        Todos todos = new Todos();
+
+        todos.add(task);
+        todos.add(task2);
+        todos.add(task3);
+
+        Task[] expected = {task2, task3};
+        Task[] actual = todos.search("Отчет");
+
+        Assertions.assertArrayEquals(expected, actual);
     }
 
 
